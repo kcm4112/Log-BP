@@ -20,6 +20,11 @@ mongoose.connect(config.mongoURI, {
   .catch(err => console.log(err))
 
 
+
+app.get('/api/hello', (req, res) => {
+  res.send('안녕하세요~')
+})
+
 //get방식
 app.get('/', (req, res) => {
   res.send('Hello World!, 노드몬을 통해서 실행!!! 코드에 변경이 일어나면 자동으로 update된다. 서버 on/off 필요없음!, postman에서 client요청 보내보기!!.')
