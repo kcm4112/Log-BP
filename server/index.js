@@ -20,7 +20,7 @@ mongoose.connect(config.mongoURI, {
   .catch(err => console.log(err))
 
 
-
+//클라이언트에서 서버로 요청 되는지 확인하기 위해서 구혀한 임시 Router.
 app.get('/api/hello', (req, res) => {
   res.send('안녕하세요~')
 })
@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 
 //post방식
 //회원가입 Router생성
-app.post('/register', (req, res) => {
+app.post('/api/users/register', (req, res) => {
   //회원가입 할 때 필요한 정보들을 client에서 가져오면
   //그것들을 데이터 베이스에 넣어준다.
   //user가 입력한 데이터를 bodyParser를 통해 req.body에 저장한다.
